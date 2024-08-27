@@ -8,11 +8,19 @@ using UnityEngine;
 
 public static class Entry
 {
+    private static int tick = 0;
     public static void Start()
     {
+        Application.logMessageReceived += Log;
         Debug.Log("[Entry::Start] 看到这个日志表示你成功运行了热更新代码");
         Run_InstantiateByAddComponent();
+        Debug.Log(tick);
         Run_AOTGeneric();
+    }
+
+    private static void Log(string condition, string stackTrace, LogType type)
+    {
+        tick++;
     }
 
     private static void Run_InstantiateByAddComponent()
@@ -35,6 +43,6 @@ public static class Entry
         // 泛型实例化
         var arr = new List<MyVec3>();
         arr.Add(new MyVec3 { x = 1 });
-        Debug.Log("[Demos.Run_AOTGeneric] 成功运行泛型代码");
+        Debug.Log($"[Demos.Run_AOTGeneric] 成功运行泛型代码 value:{arr[0].x}");
     }
 }

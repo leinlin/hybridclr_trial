@@ -1,11 +1,10 @@
 {
   "dependencies": {
     "com.code-philosophy.hybridclr": {
-      "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
+      "version": "file:com.code-philosophy.hybridclr",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "53f4f33bf04c982f23e9f2df8f1c676612f47cfb"
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -24,7 +23,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.31",
+      "version": "1.1.24",
       "depth": 1,
       "source": "registry",
       "dependencies": {

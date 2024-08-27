@@ -37,9 +37,9 @@ public class LoadDll : MonoBehaviour
     }
     private static List<string> AOTMetaAssemblyFiles { get; } = new List<string>()
     {
-        "mscorlib.dll.bytes",
-        "System.dll.bytes",
-        "System.Core.dll.bytes",
+        // "mscorlib.dll.bytes",
+        // "System.dll.bytes",
+        // "System.Core.dll.bytes",
     };
 
     IEnumerator DownLoadAssets(Action onDownloadComplete)
@@ -49,7 +49,7 @@ public class LoadDll : MonoBehaviour
             "prefabs",
             "HotUpdate.dll.bytes",
         }.Concat(AOTMetaAssemblyFiles);
-
+        
         foreach (var asset in assets)
         {
             string dllPath = GetWebRequestPath(asset);
@@ -105,7 +105,7 @@ public class LoadDll : MonoBehaviour
 
     void StartGame()
     {
-        LoadMetadataForAOTAssemblies();
+        //LoadMetadataForAOTAssemblies();
 #if !UNITY_EDITOR
         _hotUpdateAss = Assembly.Load(ReadBytesFromStreamingAssets("HotUpdate.dll.bytes"));
 #else
